@@ -1,5 +1,13 @@
+#This is the file where we created our tests
+
 require( 'minitest/autorun' )
+#We run a library or "gem" called 'minitest'
 require_relative( '../ruby_functions_practice' )
+#We link it to the file we're practicing on
+
+#Then we enclose our test within this
+#magic code beginning with 'class Functions' practice etc
+#and ending with 'end' down there
 
 class Functions_Practice < MiniTest::Test
 
@@ -7,7 +15,10 @@ class Functions_Practice < MiniTest::Test
     return_10_result = return_10()
     assert_equal( 10, return_10_result )
   end
-
+#------ For every 'def' here we're defining a function.
+#The function has to begin with test_
+#The part called 'return_10() above should correspond
+#with the test function name in your function file.
   def test_add()
     add_result = add( 1, 2 )
     assert_equal( 3, add_result )
@@ -70,17 +81,18 @@ class Functions_Practice < MiniTest::Test
 
   #Given the length of a side of a cube calculate the volume
   def test_volume_of_cube()
-    #add test code here
+    test_volume_of_cube_result = volume_of_cube(10)
+    assert_equal(1000, test_volume_of_cube_result)
   end
 
   #Given the radius of a sphere calculate the volume
   def test_volume_of_sphere()
-    #add test code here
+    test_volume_of_sphere_result = volume_of_sphere(10)
+    assert_equal(4188.79, test_volume_of_sphere_result)
   end
 
   #Given a value in farenheit, convert this into celsius.
   def test_fahrenheit_to_celsius()
-    #add test code here
   end
 
 
